@@ -14,3 +14,16 @@
 .tweeter {
   font-size:xxx-large;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  background-image: url("/images/brushed-alum.png");
+  background-color: palegreen;
+  color: #FFFFFF;
+  
+}
