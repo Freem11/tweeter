@@ -11,5 +11,10 @@
   background-image: url("/images/brushed-alum.png");
   background-color: palegreen;
   color: #FFFFFF;
+  margin-top: 120px;
   
+}
+
+.bold-me {
+  font-size: 36px;
 }

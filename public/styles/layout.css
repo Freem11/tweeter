@@ -14,14 +14,16 @@ html {
  * Global layout stuff
  */
 
+.header {
+  margin-top: 120px;
+}
+
 .container {
   background-color: f4f1ec;
   width: 90%;
   margin: auto;
+  padding-bottom: 15px;
 }
-
-
-
 
 body {
   color: #545149;

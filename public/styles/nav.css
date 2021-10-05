@@ -1,4 +1,8 @@
 
+.nav-box {
+  height: 120px;
+}
+
 .flex-container {
   background-color: #4056A1;
   height: 120px;
@@ -7,6 +11,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
 }
 
@@ -16,7 +23,7 @@
   align-items: center;
 }
 
-.fas {
+.fa-angle-double-down {
   color: red;
 }
 

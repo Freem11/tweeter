@@ -1,0 +1,83 @@
+
+
+.sub-header-container-old-tweet {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-top: 0.5em;
+  padding-bottom: 2;
+  width: 95%;
+  align-items: center;
+  margin: auto;
+
+}
+
+.header-container-old-tweet {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-top: 0.5em;
+  padding-bottom: 20px;
+  width: 95%;
+  margin: auto;
+
+
+}
+
+.trouble {
+  display: flex ;
+}
+
+.box10 {
+  height: 40px;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+  padding-top: 10px;
+  border-style: solid;
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  border-width: 4px;
+  color: #545149;
+  padding-bottom: 45px;
+}
+
+
+.existing-tweet {
+  border-style: solid;
+  border-width: 4px;
+  border-color: #545149;
+}
+
+.existing-tweet:hover {
+  box-shadow: 10px 10px lightsteelblue;
+}
+
+
+.at-handle {
+  color: lightgrey;
+}
+
+.fa-flag:hover {
+color: rgb(172, 153, 48);
+}
+
+.fa-retweet:hover {
+  color: rgb(172, 153, 48);
+}
+
+.fa-heart:hover{
+  color: rgb(172, 153, 48);
+}
+
+.user-name {
+  padding-left: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+.tweetfld {
+  padding-bottom: 10px;
+}
