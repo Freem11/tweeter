@@ -1,0 +1,53 @@
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
+
+
+
+.textfld {
+  background-color: transparent;
+  height: 40px;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
+  border-width: 4px;
+  color: black;
+}
+
+
+.textfld:focus {
+	outline-style: none;
+	box-shadow: none;
+	border-top: transparent;
+  border-right: transparent;
+  border-left: transparent; 
+}
+
+.sub-header-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-top: 0.5em;
+  padding-bottom: 2;
+  width: 95%;
+  align-items: center;
+  margin: auto;
+
+}
+
+.subbutton {
+  background-color: #4056A1;
+  font-family: 'Bungee', cursive;
+  color: #FFFFFF;
+  
+}
+.hummer {
+    border-bottom: darkgrey;
+    border-width: 2px;
+    color: black;   
+}
+
