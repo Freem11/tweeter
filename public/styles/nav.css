@@ -1,0 +1,27 @@
+
+.flex-container {
+  background-color: #4056A1;
+  height: 120px;
+  padding: 1.5em;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fas {
+  color: red;
+}
+
+.tweeter {
+  font-size:xxx-large;
+  font-family: 'Bungee', cursive;
+}
+
