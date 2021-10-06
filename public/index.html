@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweet-feed.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- Source Sans Pro Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet"> 
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-feed.css" type="text/css" />
 
-    <!-- Bungee Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet"> 
+  <!-- Source Sans Pro Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bungee Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-     <!-- fontawesome library -->
-    <script src="https://kit.fontawesome.com/88dc62d230.js" crossorigin="anonymous"></script>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+
+  <!-- fontawesome library -->
+  <script src="https://kit.fontawesome.com/88dc62d230.js" crossorigin="anonymous"></script>
+
+  <!-- timeago library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-  </head>
+</head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <div class="nav-box">
+<body>
+  <!-- Top nav bar (fixed) -->
+  <div class="nav-box">
     <nav>
       <div class="flex-container">
 
@@ -42,12 +47,12 @@
           <span class='tweeter'>tweeter</span>
         </div1>
 
-        <div class = "box a">
+        <div class="box a">
           <div2>
             <span><strong>Write</strong> a new tweet</span>
-            
+
           </div2>
-          
+
           <div3>
             <i class="fas fa-angle-double-down"></i>
           </div3>
@@ -57,73 +62,73 @@
     </nav>
     <div>
 
-    <header>
-      <div class= "header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <p class= "bold-me"><b>Matt</b> Freeman</p>
-      </div>
-    </div>
-  </header>
-  
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-
-        <div class="box7">
-        <form class="form" action="/tweets" method="POST">
-          <label class = "hummer" for="tweet-text">What are you humming about?</label>
-          <input class= "textfld" name="text" id="tweet-text"></input>
-        </div>
-
-          <div class= "sub-header-container">
-              <div>
-                <button class ="subbutton" type="submit">Tweet</button>
-              </div>
-              <div>
-                <output name="counter" id="counter" class="counter" for="tweet-text">140</output>
-              </div>
-          </div>
-        </form>
-      </section>
-
-      <article class="existing-tweet">
-
-        <div class= "header-container-old-tweet">
-          <div class="trouble">
-              <img src="/images/face.png" height="30px" width="30px"> 
-              <label class ="user-name">username</label>
-          </div>
+      <header>
+        <div class="header">
           <div>
-            <label class ="at-handle">@ Handle</label>
+            <img src="/images/profile-hex.png">
           </div>
-      </div>
-
-        <div class="box10">
-        
-
-          <label class= "tweetfld" name="oldTweet" id="old-tweet-text">old tweet content </label>
+          <br>
+          <div>
+            <p class="bold-me"><b>Matt</b> Freeman</p>
+          </div>
         </div>
+      </header>
 
-          <div class= "sub-header-container-old-tweet">
-              <div>
-                <label class ="days-since">10 days ago</label>
-              </div>
-              <div>
-                <i class="fas fa-flag"></i>
-                <i class="fas fa-retweet"></i>
-                <i class="fas fa-heart"></i>
-              </div>
+
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+
+          <div class="box7">
+            <form class="form" action="/tweets" method="POST">
+              <label class="hummer" for="tweet-text">What are you humming about?</label>
+              <input class="textfld" name="text" id="tweet-text"></input>
           </div>
-    
-      </article>
-      
-    </main>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  </body>
+
+          <div class="sub-header-container">
+            <div>
+              <button class="subbutton" type="submit">Tweet</button>
+            </div>
+            <div>
+              <output name="counter" id="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </div>
+          </form>
+        </section>
+
+        <article class="existing-tweet">
+
+          <div class="header-container-old-tweet">
+            <div class="trouble">
+              <img src="/images/face.png" height="30px" width="30px">
+              <label class="user-name">username</label>
+            </div>
+            <div>
+              <label class="at-handle">@ Handle</label>
+            </div>
+          </div>
+
+          <div class="box10">
+            <label class="tweetfld" name="oldTweet" id="old-tweet-text">old tweet content </label>
+          </div>
+
+          <div class="sub-header-container-old-tweet">
+            <div>
+              <label class="days-since">10 days ago</label>
+            </div>
+            <div>
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+
+        </article>
+
+      </main>
+      <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+     
+</body>
+
 </html>
