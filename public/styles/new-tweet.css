@@ -24,6 +24,7 @@
 
 
 .textfld:focus {
+  background-color: transparent;
 	outline-style: none;
 	box-shadow: none;
 	border-top: transparent;

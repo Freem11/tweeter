@@ -31,6 +31,54 @@ let tweetData = [
 
 $(document).ready(function () {
 
+
+  $(function() {
+   
+    $('.form').on('submit', function (e) {
+
+      e.preventDefault()
+
+        const textLen = $('.textfld').val()
+
+        if (textLen.length === 0) {
+            alert("Your tweet has nothing in it")
+            return
+        }
+
+        if (textLen.length > 140) {
+          alert("Your tweet is too long!")
+          return
+      }
+
+       const tweetData = $(this).serialize()
+
+      $.post( '/tweets',  tweetData )
+        .done(function (result) {
+        });
+    });
+
+  });
+
+const loadtweets = function (){
+    
+    // $('.form').on('submit', function (e) {
+      // e.preventDefault()
+      // console.log('Button clicked, performing ajax call...');
+
+      $.ajax('/tweets', { method: 'GET' })
+      .then(function (result) {
+        console.log('Success: ', result);
+
+        let final = renderTweets(result)
+        $('.existing-tweet').append(final)
+
+      });
+    // });
+
+}
+loadtweets()
+
+
 const renderTweets = function(tweets) {
   
 
@@ -44,7 +92,7 @@ const renderTweets = function(tweets) {
 
 const createTweetElement = function (object) {
   
-  let blah = timeago.format(object.content.created_at)
+  let blah = timeago.format(object.created_at)
 
   return $(`<article class="existing-tweet">
     <div class= "header-container-old-tweet">
@@ -75,7 +123,7 @@ const createTweetElement = function (object) {
 
 
 
-renderTweets(tweetData);
+//renderTweets(tweetData);
 
   // Test / driver code (temporary)
   // console.log($tweet); // to see what it looks like
