@@ -54,10 +54,30 @@ $(document).ready(function () {
 
       $.post( '/tweets',  tweetData )
         .done(function (result) {
+
+          $.ajax('/tweets', { method: 'GET' })
+            .then(function (results) {
+          
+  
+          let final = createTweetElement(results[results.length-1])
+          $('.tweets').prepend(final);
+  
+          $('.textfld').val("")
+          $('.counter').val(140)
+         
         });
+
+        });
+
+          
+
+        
+        
     });
 
   });
+
+
 
 const loadtweets = function (){
     
@@ -80,14 +100,15 @@ loadtweets()
 
 
 const renderTweets = function(tweets) {
-  
 
-  for (let record of tweets){
-      $tweet = createTweetElement(record)
+  for (i = tweets.length - 1; i >= 0; i--){
 
-      $(".container").append($tweet) 
+      $tweet = createTweetElement(tweets[i])
+
+      $(".tweets").append($tweet) 
+
   }
-
+        return $tweet
 }
 
 const createTweetElement = function (object) {
