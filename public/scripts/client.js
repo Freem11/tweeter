@@ -31,6 +31,10 @@ let tweetData = [
 
 $(document).ready(function () {
 
+  $('.tweet-reveal').click(() => {
+    $('.new-tweet').slideToggle()
+  })
+   
 
   $(function() {
    
@@ -41,14 +45,20 @@ $(document).ready(function () {
         const textLen = $('.textfld').val()
 
         if (textLen.length === 0) {
-            alert("Your tweet has nothing in it")
-            return
+          $('.error-msg1').slideDown('<div>Your tweet is empty!</div>')
+          return
+        } else {
+          $('.error-msg1').slideUp('<div>Your tweet is empty!</div>')
         }
 
         if (textLen.length > 140) {
-          alert("Your tweet is too long!")
+          $('.error-msg2').slideDown('<div>Your tweet is too long!</div>')
           return
+      } else {
+        $('.error-msg2').slideUp('<div>Your tweet is too long!</div>')
       }
+
+
 
        const tweetData = $(this).serialize()
 
