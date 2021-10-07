@@ -18,3 +18,7 @@
 .bold-me {
   font-size: 36px;
 }
+
+.tweet-reveal:hover {
+  color: gold;
+}

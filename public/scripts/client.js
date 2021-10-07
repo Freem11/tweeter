@@ -33,8 +33,25 @@ $(document).ready(function () {
 
   $('.tweet-reveal').click(() => {
     $('.new-tweet').slideToggle()
+    $('.textfld').focus()
   })
    
+  $(document).scroll(() => {
+    $(".fa-angle-double-up").css('visibility','visible')
+  })
+
+  $(".fa-angle-double-up").click(() => {
+    $(document).scrollTop(0) 
+  })
+
+
+  $(window).scroll(() => {
+      if($(window).scrollTop() < 100){
+        $(".fa-angle-double-up").css('visibility','hidden')
+      }
+  }) 
+    
+  
 
   $(function() {
    
