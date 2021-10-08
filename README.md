@@ -19,3 +19,13 @@ It utilitzes jQuery, HTML 5 and CSS
 - chance
 - md5
 - timeago
+
+## Screenshots
+
+!["Desktop View Main Screen"](https://raw.githubusercontent.com/Freem11/tweeter/master/docs/desktopBase.png)
+
+!["Desktop View Scolled down to show extra features"](https://raw.githubusercontent.com/Freem11/tweeter/master/docs/desktopScroll.png)
+
+!["Mobile View with Empty Tweet Warning"](https://raw.githubusercontent.com/Freem11/tweeter/master/docs/MobileEmpty.png)
+
+!["Mobile View with Tweet too long Warning"](https://raw.githubusercontent.com/Freem11/tweeter/master/docs/MobileTooLong.png)
