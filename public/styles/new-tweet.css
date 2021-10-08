@@ -1,13 +1,10 @@
-
 .counter {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
 .new-tweet {
   padding-bottom: 30px;
 }
-
-
 
 .textfld {
   background-color: transparent;
@@ -22,14 +19,13 @@
   color: #545149;
 }
 
-
 .textfld:focus {
   background-color: transparent;
-	outline-style: none;
-	box-shadow: none;
-	border-top: transparent;
+  outline-style: none;
+  box-shadow: none;
+  border-top: transparent;
   border-right: transparent;
-  border-left: transparent; 
+  border-left: transparent;
 }
 
 .sub-header-container {
@@ -41,18 +37,15 @@
   width: 95%;
   align-items: center;
   margin: auto;
-
 }
 
 .subbutton {
-  background-color: #4056A1;
-  font-family: 'Bungee', cursive;
-  color: #FFFFFF;
-  
+  background-color: #4056a1;
+  font-family: "Bungee", cursive;
+  color: #ffffff;
 }
 .hummer {
-    border-bottom: darkgrey;
-    border-width: 2px;
-    color: #545149;   
+  border-bottom: darkgrey;
+  border-width: 2px;
+  color: #545149;
 }
-

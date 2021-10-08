@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -28,7 +30,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
 }
 .form {
@@ -39,45 +41,39 @@ body {
   display: none;
 }
 
-
 @media only screen and (min-width: 768px) {
-
   main {
     flex: 1.2;
   }
 
+  .big-one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-.big-one{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+  .tweets {
+    margin-left: 10%;
+    width: 100%;
+  }
 
-.tweets {
-  margin-left: 10%;
-  width: 100%;
-}
+  .container {
+    width: 100%;
+    margin-top: 120px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 
-.container {
-  width: 100%;
-  margin-top: 120px;
-  margin-left: 10%;
-  margin-right: 10%;
-}
+  .new-tweet {
+    margin-bottom: 30px;
+    width: 100%;
+    margin-left: 10%;
+  }
 
-.new-tweet {
-  margin-bottom: 30px;
-  width: 100%;
-  margin-left: 10%;
-
-}
-
-.existing-tweet {
-  margin-top: 30px;
-  width: 100%;
-
-}
-
+  .existing-tweet {
+    margin-top: 30px;
+    width: 100%;
+  }
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

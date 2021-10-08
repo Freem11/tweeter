@@ -1,13 +1,11 @@
-
 .nav-box {
   height: 120px;
 }
 
 .flex-container {
-  
   height: 120px;
   padding: 1.5em;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,7 +14,6 @@
   width: 100%;
   background-image: url("/images/brushed-alum.png");
   background-color: palegreen;
-
 }
 
 .a {
@@ -26,11 +23,9 @@
   cursor: pointer;
 }
 
-
-
 .tweeter {
-  font-size:xxx-large;
-  font-family: 'Bungee', cursive;
+  font-size: xxx-large;
+  font-family: "Bungee", cursive;
 }
 
 .fa-angle-double-up {
@@ -39,7 +34,7 @@
   align-content: flex-end;
   text-align: right;
   float: right;
-  position:fixed;
+  position: fixed;
   color: gold;
   background-color: lightseagreen;
   border-radius: 50%;
@@ -54,26 +49,30 @@
   margin-bottom: 10%;
 }
 
-
 .fa-angle-double-down {
   color: red;
 }
 
-
-#bounce:hover > div3 > #work{
+#bounce:hover > div3 > #work {
   animation: bounce 2s infinite;
   position: relative;
 }
 
 @keyframes bounce {
-  from {top: 0em;}
-  50% {top: 0.3em;}
-  to {top: 0em;}
+  from {
+    top: 0em;
+  }
+  50% {
+    top: 0.3em;
+  }
+  to {
+    top: 0em;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-.flex-container {
-  background-color: #4056A1;
-  background-image: none;
-}
+  .flex-container {
+    background-color: #4056a1;
+    background-image: none;
+  }
 }

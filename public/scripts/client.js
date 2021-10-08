@@ -5,23 +5,27 @@
  */
 
 $(document).ready(function () {
+  // Toggle to reveal and hide the tweet input area
   $(".tweet-reveal").click(() => {
     $(".new-tweet").slideToggle();
     $(".textfld").focus();
   });
 
+  //Reveal return to top button
   $(document).scroll(() => {
     $(".fa-angle-double-up").css("visibility", "visible");
     $(".fa-angle-double-down").css("visibility", "hidden");
     $(".tweet-reveal").css("visibility", "hidden");
   });
-/////////////////
+
+  //Return to top of page
   $(".fa-angle-double-up").click(() => {
     $(document).scrollTop(0);
     $(".new-tweet").slideDown();
     $(".textfld").focus();
   });
 
+  //return to top button rehides once above 100 pixels on scroll
   $(window).scroll(() => {
     if ($(window).scrollTop() < 100) {
       $(".fa-angle-double-up").css("visibility", "hidden");
@@ -36,6 +40,7 @@ $(document).ready(function () {
 
       const textLen = $(".textfld").val();
 
+      // Empty Tweet Slider
       if (textLen.length === 0) {
         $(".error-msg1").slideDown("<div>Your tweet is empty!</div>");
         return;
@@ -43,6 +48,7 @@ $(document).ready(function () {
         $(".error-msg1").slideUp("<div>Your tweet is empty!</div>");
       }
 
+      // Over 140 characters slider
       if (textLen.length > 140) {
         $(".error-msg2").slideDown("<div>Your tweet is too long!</div>");
         return;
@@ -65,10 +71,6 @@ $(document).ready(function () {
   });
 
   const loadtweets = function () {
-    // $('.form').on('submit', function (e) {
-    // e.preventDefault()
-    // console.log('Button clicked, performing ajax call...');
-
     $.ajax("/tweets", { method: "GET" }).then(function (result) {
       console.log("Success: ", result);
 
@@ -117,10 +119,4 @@ $(document).ready(function () {
         </div>
       </article>`);
   };
-
-  //renderTweets(tweetData);
-
-  // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-  // $(".container").append($tweet);
 });

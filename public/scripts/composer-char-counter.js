@@ -13,7 +13,7 @@ $(document).ready(function() {
     } else {
        $("#counter").css('color','#545149')
     }
-    // console.log(remainingCharacters); //The this keyword is a reference to the button
+
   });
 
   
