@@ -4,145 +4,94 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-let tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 $(document).ready(function () {
-
-  $('.tweet-reveal').click(() => {
-    $('.new-tweet').slideToggle()
-    $('.textfld').focus()
-  })
-   
-  $(document).scroll(() => {
-    $(".fa-angle-double-up").css('visibility','visible')
-  })
-
-  $(".fa-angle-double-up").click(() => {
-    $(document).scrollTop(0) 
-  })
-
-
-  $(window).scroll(() => {
-      if($(window).scrollTop() < 100){
-        $(".fa-angle-double-up").css('visibility','hidden')
-      }
-  }) 
-    
-  
-
-  $(function() {
-   
-    $('.form').on('submit', function (e) {
-
-      e.preventDefault()
-
-        const textLen = $('.textfld').val()
-
-        if (textLen.length === 0) {
-          $('.error-msg1').slideDown('<div>Your tweet is empty!</div>')
-          return
-        } else {
-          $('.error-msg1').slideUp('<div>Your tweet is empty!</div>')
-        }
-
-        if (textLen.length > 140) {
-          $('.error-msg2').slideDown('<div>Your tweet is too long!</div>')
-          return
-      } else {
-        $('.error-msg2').slideUp('<div>Your tweet is too long!</div>')
-      }
-
-
-
-       const tweetData = $(this).serialize()
-
-      $.post( '/tweets',  tweetData )
-        .done(function (result) {
-
-          $.ajax('/tweets', { method: 'GET' })
-            .then(function (results) {
-          
-  
-          let final = createTweetElement(results[results.length-1])
-          $('.tweets').prepend(final);
-  
-          $('.textfld').val("")
-          $('.counter').val(140)
-         
-        });
-
-        });
-
-          
-
-        
-        
-    });
-
+  $(".tweet-reveal").click(() => {
+    $(".new-tweet").slideToggle();
+    $(".textfld").focus();
   });
 
+  $(document).scroll(() => {
+    $(".fa-angle-double-up").css("visibility", "visible");
+    $(".fa-angle-double-down").css("visibility", "hidden");
+    $(".tweet-reveal").css("visibility", "hidden");
+  });
+/////////////////
+  $(".fa-angle-double-up").click(() => {
+    $(document).scrollTop(0);
+    $(".new-tweet").slideDown();
+    $(".textfld").focus();
+  });
 
+  $(window).scroll(() => {
+    if ($(window).scrollTop() < 100) {
+      $(".fa-angle-double-up").css("visibility", "hidden");
+      $(".fa-angle-double-down").css("visibility", "visible");
+      $(".tweet-reveal").css("visibility", "visible");
+    }
+  });
 
-const loadtweets = function (){
-    
-    // $('.form').on('submit', function (e) {
-      // e.preventDefault()
-      // console.log('Button clicked, performing ajax call...');
+  $(function () {
+    $(".form").on("submit", function (e) {
+      e.preventDefault();
 
-      $.ajax('/tweets', { method: 'GET' })
-      .then(function (result) {
-        console.log('Success: ', result);
+      const textLen = $(".textfld").val();
 
-        let final = renderTweets(result)
-        $('.existing-tweet').append(final)
+      if (textLen.length === 0) {
+        $(".error-msg1").slideDown("<div>Your tweet is empty!</div>");
+        return;
+      } else {
+        $(".error-msg1").slideUp("<div>Your tweet is empty!</div>");
+      }
 
+      if (textLen.length > 140) {
+        $(".error-msg2").slideDown("<div>Your tweet is too long!</div>");
+        return;
+      } else {
+        $(".error-msg2").slideUp("<div>Your tweet is too long!</div>");
+      }
+
+      const tweetData = $(this).serialize();
+
+      $.post("/tweets", tweetData).done(function (result) {
+        $.ajax("/tweets", { method: "GET" }).then(function (results) {
+          let final = createTweetElement(results[results.length - 1]);
+          $(".tweets").prepend(final);
+
+          $(".textfld").val("");
+          $(".counter").val(140);
+        });
       });
+    });
+  });
+
+  const loadtweets = function () {
+    // $('.form').on('submit', function (e) {
+    // e.preventDefault()
+    // console.log('Button clicked, performing ajax call...');
+
+    $.ajax("/tweets", { method: "GET" }).then(function (result) {
+      console.log("Success: ", result);
+
+      let final = renderTweets(result);
+      $(".existing-tweet").append(final);
+    });
     // });
+  };
+  loadtweets();
 
-}
-loadtweets()
+  const renderTweets = function (tweets) {
+    for (i = tweets.length - 1; i >= 0; i--) {
+      $tweet = createTweetElement(tweets[i]);
 
+      $(".tweets").append($tweet);
+    }
+    return $tweet;
+  };
 
-const renderTweets = function(tweets) {
+  const createTweetElement = function (object) {
+    let blah = timeago.format(object.created_at);
 
-  for (i = tweets.length - 1; i >= 0; i--){
-
-      $tweet = createTweetElement(tweets[i])
-
-      $(".tweets").append($tweet) 
-
-  }
-        return $tweet
-}
-
-const createTweetElement = function (object) {
-  
-  let blah = timeago.format(object.created_at)
-
-  return $(`<article class="existing-tweet">
+    return $(`<article class="existing-tweet">
     <div class= "header-container-old-tweet">
     <div class="trouble">
         <img src="${object.user.avatars}" height="30px" width="30px">
@@ -153,7 +102,7 @@ const createTweetElement = function (object) {
     </div>
 </div>
 <div class="box10">
-        <label class= "tweetfld" name="oldTweet" id="old-tweet-text">${object.content.text} </label>
+        <textarea disabled="true" class= "tweetfld" name="oldTweet" id="old-tweet-text">${object.content.text} </textarea>
       </div>
 
        <div class= "sub-header-container-old-tweet">
@@ -167,14 +116,11 @@ const createTweetElement = function (object) {
             </div>
         </div>
       </article>`);
-};
+  };
 
-
-
-//renderTweets(tweetData);
+  //renderTweets(tweetData);
 
   // Test / driver code (temporary)
   // console.log($tweet); // to see what it looks like
   // $(".container").append($tweet);
-
 });

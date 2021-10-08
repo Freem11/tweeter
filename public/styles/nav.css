@@ -4,7 +4,7 @@
 }
 
 .flex-container {
-  background-color: #4056A1;
+  
   height: 120px;
   padding: 1.5em;
   color: #FFFFFF;
@@ -14,6 +14,8 @@
   position: fixed;
   top: 0;
   width: 100%;
+  background-image: url("/images/brushed-alum.png");
+  background-color: palegreen;
 
 }
 
@@ -21,11 +23,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
-.fa-angle-double-down {
-  color: red;
-}
+
 
 .tweeter {
   font-size:xxx-large;
@@ -45,9 +46,34 @@
   padding: 25px;
   visibility: hidden;
   top: 80%;
-  right: 3%
+  right: 3%;
+  cursor: pointer;
 }
 
 .rtn-top {
   margin-bottom: 10%;
+}
+
+
+.fa-angle-double-down {
+  color: red;
+}
+
+
+#bounce:hover > div3 > #work{
+  animation: bounce 2s infinite;
+  position: relative;
+}
+
+@keyframes bounce {
+  from {top: 0em;}
+  50% {top: 0.3em;}
+  to {top: 0em;}
+}
+
+@media only screen and (min-width: 768px) {
+.flex-container {
+  background-color: #4056A1;
+  background-image: none;
+}
 }
